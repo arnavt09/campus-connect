@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -17,13 +17,13 @@ export class ClubService {
   getClubById(id: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
-  
+
   createClub(clubData: any): Observable<any> {
     return this.http.post(this.apiUrl, clubData);
   }
-
+  
   updateClub(id: string, clubData: any): Observable<any> {
-    return this.http.put(`{this.apiUrl}/${id}`, clubData);
+    return this.http.put(`${this.apiUrl}/${id}`, clubData);
   }
 
   deleteClub(id: string): Observable<any> {
@@ -35,6 +35,6 @@ export class ClubService {
   }
 
   leaveClub(clubId: string, userId: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/${clubId}/leave`, {userId: userId });
+    return this.http.post(`${this.apiUrl}/${clubId}/leave`, { userId: userId });
   }
 }
