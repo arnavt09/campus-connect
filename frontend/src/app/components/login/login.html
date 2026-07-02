@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>CampusConnect Login</h2>
+
+  <form (ngSubmit)="login()">
+    <div>
+      <label>Email</label><br>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+    </div>
+
+    <br>
+
+    <div>
+      <label>Password</label><br>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+    </div>
+
+    <br>
+
+    <button type="submit">
+      Login
+    </button>
+  </form>
+
+  <br>
+
+  <p>{{ message }}</p>
+</div>
