@@ -1,37 +1,23 @@
 <div class="container">
   <h2>CampusConnect Register</h2>
 
-  <form (ngSubmit)="register()">
-    <div>
-      <label>Name</label><br />
-      <input
-        type="text"
-        [(ngModel)]="name"
-        name="name"
-        required
-     />
-   </div>
+  <form (ngSumit)="register()">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="name" name="name" required />
 
-   <br />
+    <label>Email</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
 
-   <div>
-     <label>Email</label><br />
-     <input
-       type="email"
-       [(ngModel)]="email"
-       name="email"
-       required
-     />   
-   </div>
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password" name="password" required />
 
-   <br />
+    <button type="submit">Register</button>
+  </form>
 
-   <div>
-    <label>Password</label><br />
-    <input
-      type="password"
-      [(ngModel)]="password"
-      name="password"
-      required
-     />
-   </div>
+  <p>{{ message }}</p>
+
+  <p>
+    Already have an account?
+    <a routerLink="/login">Login here</a>
+  </p>
+</div>

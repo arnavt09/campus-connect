@@ -6,11 +6,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DashboardService {
+
   private apiUrl = 'http://localhost:5000/api/dashboard';
 
   constructor(private http: HttpClient) {}
 
+  getUserId(): string {
+    return localStorage.getItem('userId') ?? '';
+  }
+
   getDashboard(userId: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${userId}`);
+    return this.http.get<any>(`${this.apiUrl}/${userId}`);
   }
 }
